@@ -1,0 +1,35 @@
+server:
+  port: 8052
+
+spring:
+  application:
+    name: ms-notification
+  datasource:
+    url: jdbc:postgresql://localhost:5442/postgres
+    username: postgres
+    password: "1"
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    properties:
+      hibernate:
+        default_schema: notification
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+  # MailHog (local)
+  mail:
+    host: localhost
+    port: 1025
+
+app:
+  alerts:
+    dev-email: dev@idtech.local
